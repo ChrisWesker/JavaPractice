@@ -1,0 +1,51 @@
+
+public class ContagionControlHW2_1 {
+
+	public static void main(String[] args) {
+		int N = 16;
+		int[] A = new int [N];
+		for(int i =0; i <A.length;i++) 
+			A[i]= i;
+		for(int i =0; i <A.length;i++) {
+			int g = (int)(Math.random()*(A.length-i))+i;
+			int tmp = A[i];
+			A[i] = A[g];
+			A[g]=tmp;
+		}
+		System.out.printf("%9s","ID");
+		
+		for(int i = 0;i < N ; i++) {
+			System.out.printf("%3d",i);
+		}
+		System.out.println();
+		
+		System.out.printf("%9s", "Contactee");
+		for (int i = 0; i < N; i++) {
+			System.out.printf("%3d", A[i]);
+		}
+		System.out.println();
+
+		int groupID = 0;
+		int[] id = new int[A.length];//0:ungroup
+		
+		for (int target = 0; target < A.length; target++) {
+			if(id[target] > 0)
+				continue;
+			
+			groupID++;
+			System.out.printf("Group %d",groupID);
+			int curr = target;
+			do {
+				System.out.printf("%d ", curr);
+				id[curr] = groupID;
+				curr = A[curr]; 
+			} while (curr != target);
+			System.out.println();
+		}
+		System.out.println("number of groups = " + groupID);
+	}
+	
+	// query
+}
+
+
