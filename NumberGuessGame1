@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class NumberGuessGameH1 {
+
+	public static void main(String[] args) {
+		//(1)random number 0~100 
+			Scanner input = new Scanner(System.in);
+			int number =(int)(100*Math.random()+1);
+				
+		//(2)take user input
+			System.out.println("between " +"1 "+"~"+"100"+"pick up number" );	
+			int answer = input.nextInt();
+			
+		//(3)number answer
+			int min=1,max=100;
+			while (answer !=number){
+				if (answer<0 || answer>100) {
+					System.out.println("out of range" +"guess number");
+					}
+					else if (answer > number) {
+						max=answer;
+						System.out.println("too high" +"guess number"+min+"~"+max);
+						}
+					else if(answer <number) {
+						min=answer;
+						System.out.println("too smaill" +"guess number"+min+"~"+max);
+					}
+				if (min==number-1 && max==number+1) {
+					System.out.println("game over");
+				}
+				answer = input.nextInt();
+			}
+			System.out.println("Bingo");
+		}
+}
