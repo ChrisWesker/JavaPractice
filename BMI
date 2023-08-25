@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class BMI14082023HW {
+	public static void main(String[] args) {
+	
+	//INPUT
+	Scanner input = new Scanner(System.in);
+	System.out.println("enter your name ?");
+	String name = input.nextLine();
+	
+	System.out.println("enter your weight(kgw)");
+	double weight = input.nextDouble();
+	
+	System.out.println("enter your hight(cm)");
+	double hight = input.nextDouble();
+	
+	//AlGORITHM
+	double BMI = 10000* weight / hight / hight;
+	
+	//OUTPUT
+	System.out.println(name + "("+ BMI +")");
+	}
+}
