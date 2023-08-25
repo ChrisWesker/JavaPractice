@@ -1,0 +1,52 @@
+
+public class InheritanceDemo {
+
+	public static void main(String[] args) {
+		
+		human arthur = new human();
+		arthur.eat();
+		arthur.exercise();
+		arthur.writeCode();
+		
+		dog luckey = new dog();
+		luckey.eat();
+		luckey.exercise();
+		luckey.wagtail();
+		
+		cat kitty = new cat();
+		kitty.eat();
+		kitty.exercise();
+		kitty.makeBiscuits();
+	}
+}
+
+
+class Animal {
+	
+	void eat() {
+		System.out.println("eat...");
+	}
+	void exercise() {}
+}
+
+class human extends Animal{
+	
+		void writeCode() {}
+		@Override
+		void eat() {
+			System.out.println("use with chopstick");
+		}
+}
+
+class dog extends Animal{
+	
+	void wagtail() {}
+	@Override
+	void eat() {
+		System.out.println("eatting on ground");
+}
+}
+class cat extends Animal{
+	
+	void makeBiscuits() {}
+}
