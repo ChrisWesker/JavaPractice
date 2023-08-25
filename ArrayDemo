@@ -1,0 +1,58 @@
+
+public class ArrayDemo08212023 {
+
+	public static void main(String[] args) {
+		
+		int N = 5;
+		int[] A = new int [N];
+		for(int i = 0; i < A.length;i++) {
+			A[i] = (int)(Math.random()*100);
+		}
+		for(int i = 0; i < A.length;i++) {
+			System.out.printf("%d",A[i]);	
+		}
+		System.out.println();
+		
+		int max = A[0];
+		for(int i = 1; i<A.length; i++){
+			if(A[i] > max) {
+					max = A[i];
+			}
+		}
+		System.out.println("MAX = " + max);
+		
+		int argmax = 0;
+		for(int i = 1;i <A.length;i++) {
+			if(A[i]> A [argmax]){
+				argmax = i;
+			}
+		}
+		System.out.println("ARGMAX = "+ argmax);
+		
+		int sum = 0;
+		/*
+		for(int i = 0; i < A.length;i++) {
+			sum +=A[i];
+		}
+		*/
+		
+		for (int item : A) {
+			sum += item;
+		}
+		System.out.println("sum = " + sum);
+		
+		String[] letters = {"A","B","C","D","E"};
+		for(int i = 0; i< letters.length;i++) {
+			int j = (int)(Math.random()*letters.length);
+			String tmp = letters[i];
+			letters[i] = letters[j];
+			letters[j] = tmp;
+		}
+		for(String item : letters) {
+			System.out.printf("%s", item);
+		}
+		System.out.println();
+	}
+	
+
+}
